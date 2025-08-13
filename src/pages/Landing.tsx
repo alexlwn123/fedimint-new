@@ -12,11 +12,20 @@ const Index = () => {
       {/* Hero Section */}
       <div className="relative overflow-hidden bg-gradient-to-br from-background via-muted to-accent-light/20">
         <div className="container mx-auto px-4 py-16 lg:py-32">
-          <img src={fedimintIcon} alt="Fedimint Logo" className="w-64 h-64 mx-auto mb-12" />
+          <div className="relative w-64 h-64 mx-auto mb-12 flex items-center justify-center">
+            <img
+              src={fedimintIcon}
+              alt="Fedimint Logo"
+              className="w-64 h-64 relative z-10"
+              style={{ filter: "drop-shadow(0 0 90px rgba(0, 89, 255, 0.5)) drop-shadow(0 0 130px rgba(0, 89, 255, 0.3))" }}
+            />
+          </div>
           <div className="max-w-4xl mx-auto text-center">
             <h1 className="text-5xl lg:text-6xl font-heading font-bold mb-6 text-foreground leading-tight">
               Launch Your <br />
-              <span className="bg-gradient-to-r from-primary to-accent bg-clip-text text-transparent">
+              <span className="bg-gradient-to-r from-primary to-accent bg-clip-text text-transparent"
+              style={{ filter: "drop-shadow(0 0 40px rgba(0, 89, 255, 0.4)) drop-shadow(0 0 80px rgba(0, 89, 255, 0.2))" }}
+              >
                 Fedimint Federation
               </span>
             </h1>
@@ -31,15 +40,6 @@ const Index = () => {
               <span>Get Started</span>
               <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform duration-300" />
             </button>
-            {/* <Button 
-              variant="modern" 
-              size="lg" 
-              className="text-lg px-10 py-6 h-auto font-semibold"
-              onClick={() => navigate("/setup")}
-            >
-              Get Started
-              <ArrowRight className="h-5 w-5 ml-2" />
-            </Button> */}
           </div>
         </div>
       </div>
@@ -102,15 +102,7 @@ const Index = () => {
             <p className="text-xl mb-10 text-muted-foreground">
               Join the decentralized future with a secure, self-sovereign federation.
             </p>
-            {/* <button 
-              variant="modern" 
-              size="lg" 
-              className="text-lg px-10 py-6 h-auto font-semibold"
-              onClick={() => navigate("/setup")}
-            >
-              Begin Setup Process
-              <ArrowRight className="h-5 w-5 ml-2" />
-            </Button> */}
+
             <button
               onClick={() => navigate('/setup-type')}
               className="group bg-gradient-to-r from-cyan-500 to-blue-600 hover:from-cyan-600 hover:to-blue-700 text-white font-semibold text-lg px-10 py-4 rounded-xl shadow-lg hover:shadow-xl transform hover:-translate-y-1 transition-all duration-300 flex items-center space-x-2 mx-auto"
@@ -121,22 +113,6 @@ const Index = () => {
           </div>
         </div>
       </div>
-      
-      {/* <footer className="mt-auto px-6 py-8 border-t bg-white/70 backdrop-blur supports-[backdrop-filter]:bg-white/60">
-        <div className="max-w-7xl mx-auto flex flex-col md:flex-row items-center justify-between gap-4">
-          <div className="flex items-center space-x-2 text-sm text-gray-500">
-            <img src={fedimintLogo} alt="Fedimint" className="h-5 w-auto" />
-          </div>
-          <div className="flex items-center flex-wrap gap-4 text-sm">
-            <a href="https://fedimint.org" target="_blank" rel="noopener noreferrer" className="text-gray-600 hover:text-gray-900">Website</a>
-            <a href="https://github.com/fedimint" target="_blank" rel="noopener noreferrer" className="text-gray-600 hover:text-gray-900">GitHub</a>
-            <a href="#" className="text-gray-600 hover:text-gray-900">Nostr</a>
-            <a href="#" className="text-gray-600 hover:text-gray-900">X</a>
-            <a href="#" className="text-gray-600 hover:text-gray-900">Discord</a>
-            <a href="#" className="text-gray-600 hover:text-gray-900">Telegram</a>
-          </div>
-        </div>
-      </footer> */}
     </div>
   </PageLayout>
   );
