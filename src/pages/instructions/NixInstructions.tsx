@@ -1,10 +1,9 @@
 import React from 'react';
-import { useNavigate } from 'react-router-dom';
-import { ArrowLeft, Package, Download, Settings, Terminal, CheckCircle } from 'lucide-react';
+import { Package, Download, Settings, Terminal, CheckCircle } from 'lucide-react';
 import nixos from '../../../assets/nix-logo.png';
+import PageLayout from '../../components/PageLayout';
 
 const NixInstructions: React.FC = () => {
-  const navigate = useNavigate();
 
   const steps = [
     {
@@ -127,25 +126,13 @@ const NixInstructions: React.FC = () => {
 }`;
 
   return (
-    <div className="min-h-screen flex flex-col bg-gradient-to-br from-gray-50 to-white">
-      {/* Header */}
-      <header className="px-6 py-4">
-        <div className="max-w-4xl mx-auto flex items-center">
-          <button
-            onClick={() => navigate('/self-hosted')}
-            className="flex items-center space-x-2 text-gray-600 hover:text-gray-900 transition-colors"
-          >
-            <ArrowLeft className="w-5 h-5" />
-            <span>Back to Self-Hosted</span>
-          </button>
-        </div>
-      </header>
-
-      {/* Main Content */}
-      <main className="flex-1 px-6 py-8">
-        <div className="max-w-4xl mx-auto">
+    <PageLayout backPath="/self-hosted">
+      <div className="min-h-screen flex flex-col bg-gradient-to-br from-gray-50 to-white">
+        {/* Main Content */}
+        <main className="flex-1 px-6 py-8">
+          <div className="max-w-4xl mx-auto">
           <div className="flex items-center space-x-4 mb-8">
-            <div className="w-16 h-16 bg-gradient-to-br from-purple-500 to-pink-600 rounded-xl flex items-center justify-center">
+            <div className="w-16 h-16 bg-gradient-to-br from-purple-600 to-indigo-800 rounded-xl flex items-center justify-center flex-shrink-0">
               <img src={nixos} alt="NixOS" className="w-8 h-8" />
             </div>
             <div>
@@ -171,16 +158,16 @@ const NixInstructions: React.FC = () => {
               const IconComponent = step.icon;
               return (
                 <div key={index} className="bg-white rounded-2xl p-8 shadow-sm border border-gray-200">
-                  <div className="flex items-start space-x-6">
-                    <div className="flex-shrink-0">
-                      <div className="w-12 h-12 bg-gradient-to-br from-purple-500 to-pink-600 rounded-lg flex items-center justify-center">
+                  <div className="flex items-start md:space-x-6">
+                    <div className="flex-shrink-0 hidden md:block">
+                      <div className="w-12 h-12 bg-gradient-to-br from-purple-600 to-indigo-800 rounded-lg flex items-center justify-center">
                         <IconComponent className="w-6 h-6 text-white" />
                       </div>
                     </div>
                     
                     <div className="flex-1">
                       <div className="flex items-center space-x-3 mb-3">
-                        <span className="bg-purple-100 text-purple-800 text-sm font-medium px-3 py-1 rounded-full">
+                        <span className="bg-purple-100 text-purple-800 text-sm font-medium px-3 py-1 rounded-full whitespace-nowrap">
                           Step {index + 1}
                         </span>
                         <h3 className="text-xl font-bold text-gray-900">{step.title}</h3>
@@ -268,9 +255,10 @@ const NixInstructions: React.FC = () => {
               </a>
             </div>
           </div>
-        </div>
-      </main>
-    </div>
+          </div>
+        </main>
+      </div>
+    </PageLayout>
   );
 };
 

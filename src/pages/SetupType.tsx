@@ -7,8 +7,7 @@ const SetupType: React.FC = () => {
   const navigate = useNavigate();
 
   return (
-    // <PageLayout backPath="/" headerMaxWidthClassName="max-w-4xl" contentMaxWidthClassName="max-w-4xl" mainClassName="flex-1 flex items-center justify-center px-6">
-    <PageLayout backPath="/" mainClassName="flex-1 flex items-center justify-center px-6">
+    <PageLayout backPath="/">
           <div className="text-center mb-12">
             <h1 className="text-4xl lg:text-5xl font-bold text-gray-900 mb-4">
               Choose Your Setup Type
