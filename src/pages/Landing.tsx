@@ -17,7 +17,7 @@ const Index = () => {
               src={fedimintIcon}
               alt="Fedimint Logo"
               className="w-64 h-64 relative z-10"
-              style={{ filter: "drop-shadow(0 0 90px rgba(0, 89, 255, 0.5)) drop-shadow(0 0 130px rgba(0, 89, 255, 0.3))" }}
+              style={{ filter: "drop-shadow(0 0 120px rgba(0, 89, 255, 0.7)) drop-shadow(0 0 240px rgba(0, 89, 255, 0.2))" }}
             />
           </div>
           <div className="max-w-4xl mx-auto text-center">
