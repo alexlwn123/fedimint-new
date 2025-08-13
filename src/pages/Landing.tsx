@@ -1,5 +1,6 @@
 import { ArrowRight, Shield, Users, Settings } from "lucide-react";
 import { useNavigate } from "react-router-dom";
+import fedimintIcon from "../../assets/fedimint-icon.png";
 
 const Index = () => {
   const navigate = useNavigate();
@@ -9,7 +10,7 @@ const Index = () => {
       {/* Hero Section */}
       <div className="relative overflow-hidden bg-gradient-to-br from-background via-muted to-accent-light/20">
         <div className="container mx-auto px-4 py-24 lg:py-32">
-          <img src="/icon.png" alt="Fedimint Logo" className="w-64 h-64 mx-auto mb-12" />
+          <img src={fedimintIcon} alt="Fedimint Logo" className="w-64 h-64 mx-auto mb-12" />
           <div className="max-w-4xl mx-auto text-center">
             <h1 className="text-5xl lg:text-6xl font-heading font-bold mb-6 text-foreground">
               Launch Your <br />

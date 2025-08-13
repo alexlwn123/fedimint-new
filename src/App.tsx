@@ -1,6 +1,4 @@
-import React from 'react';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
-// import LandingPage from './pages/LandingPage';
 import SetupType from './pages/SetupType';
 import SelfHosted from './pages/SelfHosted';
 import CloudHosted from './pages/CloudHosted';
@@ -12,10 +10,9 @@ import Landing from './pages/Landing';
 
 function App() {
   return (
-    <Router>
+    <Router basename={import.meta.env.BASE_URL}>
       <div className="min-h-screen bg-white">
         <Routes>
-          {/* <Route path="/" element={<LandingPage />} /> */}
           <Route path="/" element={<Landing />} />
           <Route path="/setup-type" element={<SetupType />} />
           <Route path="/self-hosted" element={<SelfHosted />} />
