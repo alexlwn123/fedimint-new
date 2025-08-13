@@ -1,6 +1,7 @@
 import React from 'react';
 import { useNavigate } from 'react-router-dom';
 import { ArrowLeft, Package, Download, Settings, Terminal, CheckCircle } from 'lucide-react';
+import nixos from '../../../assets/nix-logo.png';
 
 const NixInstructions: React.FC = () => {
   const navigate = useNavigate();
@@ -145,7 +146,7 @@ const NixInstructions: React.FC = () => {
         <div className="max-w-4xl mx-auto">
           <div className="flex items-center space-x-4 mb-8">
             <div className="w-16 h-16 bg-gradient-to-br from-purple-500 to-pink-600 rounded-xl flex items-center justify-center">
-              <Package className="w-8 h-8 text-white" />
+              <img src={nixos} alt="NixOS" className="w-8 h-8" />
             </div>
             <div>
               <h1 className="text-4xl font-bold text-gray-900">NixOS / Nix Setup</h1>

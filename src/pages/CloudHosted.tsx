@@ -2,6 +2,8 @@ import React from 'react';
  
 import { ExternalLink, Star, Cloud, Zap, Shield } from 'lucide-react';
 import PageLayout from '../components/PageLayout';
+import nodana from '../../assets/nodana-logo.png';
+import clovyr from '../../assets/clovyr-logo.png'
 
 const CloudHosted: React.FC = () => {
 
@@ -12,7 +14,8 @@ const CloudHosted: React.FC = () => {
       url: 'https://nodana.io/templates/fedimintd',
       features: ['One-click setup', 'Managed infrastructure', 'Bitcoin-focused'],
       color: 'from-cyan-500 to-blue-600',
-      featured: true
+      featured: true,
+      image: nodana
     },
     {
       name: 'Clovyr',
@@ -20,7 +23,8 @@ const CloudHosted: React.FC = () => {
       url: 'https://clovyr.app/apps/fedimint-guardian',
       features: ['Easy deployment', 'Web-based interface', 'Collaborative setup'],
       color: 'from-blue-500 to-indigo-600',
-      featured: true
+      featured: true,
+      image: clovyr
     }
   ];
 
@@ -42,12 +46,6 @@ const CloudHosted: React.FC = () => {
       description: 'Google Cloud Platform with reliable compute services',
       url: 'https://cloud.google.com',
       features: ['Compute Engine', 'Free tier available', 'High performance']
-    },
-    {
-      name: 'Linode',
-      description: 'Developer-friendly cloud with predictable pricing',
-      url: 'https://linode.com',
-      features: ['Simple pricing', 'SSD storage', '24/7 support']
     }
   ];
 
@@ -78,7 +76,7 @@ const CloudHosted: React.FC = () => {
                 >
                   <div className="flex items-start justify-between mb-6">
                     <div className={`w-16 h-16 bg-gradient-to-br ${service.color} rounded-xl flex items-center justify-center`}>
-                      <Cloud className="w-8 h-8 text-white" />
+                      {service.image ? <img src={service.image} alt={service.name} className="w-8 h-8" /> : <Cloud className="w-8 h-8 text-white" />}
                     </div>
                     <div className="flex items-center space-x-1 bg-cyan-100 text-cyan-800 px-3 py-1 rounded-full text-sm font-medium">
                       <Star className="w-4 h-4" />
