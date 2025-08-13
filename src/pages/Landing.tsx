@@ -1,20 +1,22 @@
 import { ArrowRight, Shield, Users, Settings } from "lucide-react";
 import { useNavigate } from "react-router-dom";
 import fedimintIcon from "../../assets/fedimint-icon.png";
+import PageLayout from "../components/PageLayout";
 
 const Index = () => {
   const navigate = useNavigate();
 
   return (
+    <PageLayout headerMaxWidthClassName="max-w-7xl" contentMaxWidthClassName="" mainClassName="flex-1">
     <div className="min-h-screen bg-background">
       {/* Hero Section */}
       <div className="relative overflow-hidden bg-gradient-to-br from-background via-muted to-accent-light/20">
-        <div className="container mx-auto px-4 py-24 lg:py-32">
+        <div className="container mx-auto px-4 py-16 lg:py-32">
           <img src={fedimintIcon} alt="Fedimint Logo" className="w-64 h-64 mx-auto mb-12" />
           <div className="max-w-4xl mx-auto text-center">
-            <h1 className="text-5xl lg:text-6xl font-heading font-bold mb-6 text-foreground">
+            <h1 className="text-5xl lg:text-6xl font-heading font-bold mb-6 text-foreground leading-tight">
               Launch Your <br />
-              <span className="bg-gradient-to-r from-primary to-accent bg-clip-text text-transparent leading-snug">
+              <span className="bg-gradient-to-r from-primary to-accent bg-clip-text text-transparent">
                 Fedimint Federation
               </span>
             </h1>
@@ -120,17 +122,23 @@ const Index = () => {
         </div>
       </div>
       
-      <footer className="px-6 py-8">
-        <div className="max-w-7xl mx-auto text-center">
-          <p className="text-gray-500">
-            Powered by the Fedimint protocol • 
-            <a href="https://fedimint.org" target="_blank" rel="noopener noreferrer" className="ml-1 text-cyan-600 hover:text-cyan-700 font-medium">
-              Learn more about Fedimint
-            </a>
-          </p>
+      {/* <footer className="mt-auto px-6 py-8 border-t bg-white/70 backdrop-blur supports-[backdrop-filter]:bg-white/60">
+        <div className="max-w-7xl mx-auto flex flex-col md:flex-row items-center justify-between gap-4">
+          <div className="flex items-center space-x-2 text-sm text-gray-500">
+            <img src={fedimintLogo} alt="Fedimint" className="h-5 w-auto" />
+          </div>
+          <div className="flex items-center flex-wrap gap-4 text-sm">
+            <a href="https://fedimint.org" target="_blank" rel="noopener noreferrer" className="text-gray-600 hover:text-gray-900">Website</a>
+            <a href="https://github.com/fedimint" target="_blank" rel="noopener noreferrer" className="text-gray-600 hover:text-gray-900">GitHub</a>
+            <a href="#" className="text-gray-600 hover:text-gray-900">Nostr</a>
+            <a href="#" className="text-gray-600 hover:text-gray-900">X</a>
+            <a href="#" className="text-gray-600 hover:text-gray-900">Discord</a>
+            <a href="#" className="text-gray-600 hover:text-gray-900">Telegram</a>
+          </div>
         </div>
-      </footer>
+      </footer> */}
     </div>
+  </PageLayout>
   );
 };
 

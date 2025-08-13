@@ -1,16 +1,14 @@
 import React from "react";
-import { useNavigate } from "react-router-dom";
 import {
-  ArrowLeft,
   Umbrella,
   Download,
   Settings,
   Users,
   CheckCircle,
 } from "lucide-react";
+import PageLayout from "../../components/PageLayout";
 
 const UmbrelInstructions: React.FC = () => {
-  const navigate = useNavigate();
 
   const steps = [
     {
@@ -70,25 +68,13 @@ const UmbrelInstructions: React.FC = () => {
   ];
 
   return (
+    <PageLayout backPath="/self-hosted">
     <div className="min-h-screen flex flex-col bg-gradient-to-br from-gray-50 to-white">
-      {/* Header */}
-      <header className="px-6 py-4">
-        <div className="max-w-4xl mx-auto flex items-center">
-          <button
-            onClick={() => navigate("/self-hosted")}
-            className="flex items-center space-x-2 text-gray-600 hover:text-gray-900 transition-colors"
-          >
-            <ArrowLeft className="w-5 h-5" />
-            <span>Back to Self-Hosted</span>
-          </button>
-        </div>
-      </header>
-
       {/* Main Content */}
       <main className="flex-1 px-6 py-8">
         <div className="max-w-4xl mx-auto">
           <div className="flex items-center space-x-4 mb-8">
-            <div className="w-16 h-16 bg-gradient-to-br from-blue-500 to-indigo-600 rounded-xl flex items-center justify-center">
+            <div className="w-16 h-16 bg-gradient-to-br from-blue-500 to-indigo-600 rounded-xl flex items-center justify-center flex-shrink-0">
               <Umbrella className="w-8 h-8 text-white" />
             </div>
             <div>
@@ -135,8 +121,8 @@ const UmbrelInstructions: React.FC = () => {
                   key={index}
                   className="bg-white rounded-2xl p-8 shadow-sm border border-gray-200"
                 >
-                  <div className="flex items-start space-x-6">
-                    <div className="flex-shrink-0">
+                  <div className="flex items-start md:space-x-6">
+                    <div className="flex-shrink-0 hidden md:block">
                       <div className="w-12 h-12 bg-gradient-to-br from-blue-500 to-indigo-600 rounded-lg flex items-center justify-center">
                         <IconComponent className="w-6 h-6 text-white" />
                       </div>
@@ -144,7 +130,7 @@ const UmbrelInstructions: React.FC = () => {
 
                     <div className="flex-1">
                       <div className="flex items-center space-x-3 mb-3">
-                        <span className="bg-blue-100 text-blue-800 text-sm font-medium px-3 py-1 rounded-full">
+                        <span className="bg-blue-100 text-blue-800 text-sm font-medium px-3 py-1 rounded-full whitespace-nowrap">
                           Step {index + 1}
                         </span>
                         <h3 className="text-xl font-bold text-gray-900">
@@ -246,6 +232,7 @@ const UmbrelInstructions: React.FC = () => {
         </div>
       </main>
     </div>
+    </PageLayout>
   );
 };
 

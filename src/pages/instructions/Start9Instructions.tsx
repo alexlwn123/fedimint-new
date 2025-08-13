@@ -1,17 +1,9 @@
 import React from "react";
-import { useNavigate } from "react-router-dom";
 import start9 from '../../../assets/start9-logo.png';
-import {
-  ArrowLeft,
-  Box,
-  Download,
-  Settings,
-  Users,
-  CheckCircle,
-} from "lucide-react";
+import PageLayout from '../../components/PageLayout';
+import { Box, Download, Settings, Users, CheckCircle } from "lucide-react";
 
 const Start9Instructions: React.FC = () => {
-  const navigate = useNavigate();
 
   const steps = [
     {
@@ -72,25 +64,13 @@ const Start9Instructions: React.FC = () => {
   ];
 
   return (
-    <div className="min-h-screen flex flex-col bg-gradient-to-br from-gray-50 to-white">
-      {/* Header */}
-      <header className="px-6 py-4">
-        <div className="max-w-4xl mx-auto flex items-center">
-          <button
-            onClick={() => navigate("/self-hosted")}
-            className="flex items-center space-x-2 text-gray-600 hover:text-gray-900 transition-colors"
-          >
-            <ArrowLeft className="w-5 h-5" />
-            <span>Back to Self-Hosted</span>
-          </button>
-        </div>
-      </header>
-
-      {/* Main Content */}
-      <main className="flex-1 px-6 py-8">
-        <div className="max-w-4xl mx-auto">
+    <PageLayout backPath="/self-hosted">
+      <div className="min-h-screen flex flex-col bg-gradient-to-br from-gray-50 to-white">
+        {/* Main Content */}
+        <main className="flex-1 px-6 py-8">
+          <div className="max-w-4xl mx-auto">
           <div className="flex items-center space-x-4 mb-8">
-            <div className="w-16 h-16 bg-gradient-to-br from-cyan-500 to-blue-600 rounded-xl flex items-center justify-center">
+            <div className="w-16 h-16 bg-gradient-to-br from-cyan-500 to-blue-600 rounded-xl flex items-center justify-center flex-shrink-0">
               <img src={start9} alt="Start9" className="w-8 h-8" />
             </div>
             <div>
@@ -99,6 +79,7 @@ const Start9Instructions: React.FC = () => {
                 Deploy Fedimint on your Start9 personal server
               </p>
             </div>
+          </div>
           </div>
 
           {/* Prerequisites */}
@@ -135,8 +116,8 @@ const Start9Instructions: React.FC = () => {
                   key={index}
                   className="bg-white rounded-2xl p-8 shadow-sm border border-gray-200"
                 >
-                  <div className="flex items-start space-x-6">
-                    <div className="flex-shrink-0">
+                  <div className="flex items-start md:space-x-6">
+                    <div className="flex-shrink-0 hidden md:block">
                       <div className="w-12 h-12 bg-gradient-to-br from-cyan-500 to-blue-600 rounded-lg flex items-center justify-center">
                         <IconComponent className="w-6 h-6 text-white" />
                       </div>
@@ -144,7 +125,7 @@ const Start9Instructions: React.FC = () => {
 
                     <div className="flex-1">
                       <div className="flex items-center space-x-3 mb-3">
-                        <span className="bg-cyan-100 text-cyan-800 text-sm font-medium px-3 py-1 rounded-full">
+                        <span className="bg-cyan-100 text-cyan-800 text-sm font-medium px-3 py-1 rounded-full whitespace-nowrap">
                           Step {index + 1}
                         </span>
                         <h3 className="text-xl font-bold text-gray-900">
@@ -221,9 +202,9 @@ const Start9Instructions: React.FC = () => {
               </a>
             </div>
           </div>
-        </div>
-      </main>
-    </div>
+        </main>
+      </div>
+    </PageLayout>
   );
 };
 
