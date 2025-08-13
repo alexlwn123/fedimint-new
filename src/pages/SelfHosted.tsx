@@ -1,6 +1,9 @@
 import React from 'react';
 import { useNavigate } from 'react-router-dom';
-import { Box, Umbrella, Container, Package } from 'lucide-react';
+import { Box, Container, Package, Umbrella } from 'lucide-react';
+import start9 from '../../assets/start9-logo.png';
+import docker from '../../assets/docker-logo.png';
+import nixos from '../../assets/nix-logo.png';
 import PageLayout from '../components/PageLayout';
 
 const SelfHosted: React.FC = () => {
@@ -12,6 +15,7 @@ const SelfHosted: React.FC = () => {
       name: 'Start9',
       description: 'Personal server OS designed for self-sovereignty',
       icon: Box,
+      image: start9,
       color: 'from-cyan-500 to-blue-600',
       path: '/instructions/start9'
     },
@@ -29,15 +33,17 @@ const SelfHosted: React.FC = () => {
       description: 'Containerized deployment for any system',
       icon: Container,
       color: 'from-indigo-500 to-purple-600',
-      path: '/instructions/docker'
+      path: '/instructions/docker',
+      image: docker
     },
     {
       id: 'nix',
       name: 'NixOS',
       description: 'Declarative and reproducible system configuration',
       icon: Package,
-      color: 'from-purple-500 to-pink-600',
-      path: '/instructions/nix'
+      color: 'from-purple-600 to-indigo-800',
+      path: '/instructions/nix',
+      image: nixos
     }
   ];
 
@@ -64,7 +70,7 @@ const SelfHosted: React.FC = () => {
                 >
                   <div className="flex items-start space-x-4">
                     <div className={`w-16 h-16 bg-gradient-to-br ${platform.color} rounded-xl flex items-center justify-center flex-shrink-0`}>
-                      <IconComponent className="w-8 h-8 text-white" />
+                      {platform.image ? <img src={platform.image} alt={platform.name} className="w-8 h-8" /> : <IconComponent className="w-8 h-8 text-white" />}
                     </div>
                     
                     <div className="flex-1">

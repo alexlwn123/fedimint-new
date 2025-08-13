@@ -1,6 +1,7 @@
 import React from 'react';
 import { useNavigate } from 'react-router-dom';
 import { ArrowLeft, Container, Download, Terminal, Settings, CheckCircle } from 'lucide-react';
+import docker from '../../../assets/docker-logo.png';
 
 const DockerInstructions: React.FC = () => {
   const navigate = useNavigate();
@@ -111,7 +112,7 @@ BITCOIN_RPC_PASS=bitcoinpass`;
         <div className="max-w-4xl mx-auto">
           <div className="flex items-center space-x-4 mb-8">
             <div className="w-16 h-16 bg-gradient-to-br from-indigo-500 to-purple-600 rounded-xl flex items-center justify-center">
-              <Container className="w-8 h-8 text-white" />
+              <img src={docker} alt="Docker" className="w-8 h-8" />
             </div>
             <div>
               <h1 className="text-4xl font-bold text-gray-900">Docker Setup</h1>
