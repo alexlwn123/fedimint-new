@@ -1,28 +1,14 @@
 import React from 'react';
 import { useNavigate } from 'react-router-dom';
-import { ArrowLeft, Server, Cloud, ChevronRight } from 'lucide-react';
+import { Server, Cloud, ChevronRight } from 'lucide-react';
+import PageLayout from '../components/PageLayout';
 
 const SetupType: React.FC = () => {
   const navigate = useNavigate();
 
   return (
-    <div className="min-h-screen flex flex-col bg-gradient-to-br from-gray-50 to-white">
-      {/* Header */}
-      <header className="px-6 py-4">
-        <div className="max-w-4xl mx-auto flex items-center">
-          <button
-            onClick={() => navigate('/')}
-            className="flex items-center space-x-2 text-gray-600 hover:text-gray-900 transition-colors"
-          >
-            <ArrowLeft className="w-5 h-5" />
-            <span>Back</span>
-          </button>
-        </div>
-      </header>
-
-      {/* Main Content */}
-      <main className="flex-1 flex items-center justify-center px-6">
-        <div className="max-w-4xl mx-auto w-full">
+    // <PageLayout backPath="/" headerMaxWidthClassName="max-w-4xl" contentMaxWidthClassName="max-w-4xl" mainClassName="flex-1 flex items-center justify-center px-6">
+    <PageLayout backPath="/" mainClassName="flex-1 flex items-center justify-center px-6">
           <div className="text-center mb-12">
             <h1 className="text-4xl lg:text-5xl font-bold text-gray-900 mb-4">
               Choose Your Setup Type
@@ -102,9 +88,7 @@ const SetupType: React.FC = () => {
               </div>
             </button>
           </div>
-        </div>
-      </main>
-    </div>
+    </PageLayout>
   );
 };
 

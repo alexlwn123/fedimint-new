@@ -1,6 +1,7 @@
 import React from 'react';
 import { useNavigate } from 'react-router-dom';
-import { ArrowLeft, Box, Umbrella, Container, Package } from 'lucide-react';
+import { Box, Umbrella, Container, Package } from 'lucide-react';
+import PageLayout from '../components/PageLayout';
 
 const SelfHosted: React.FC = () => {
   const navigate = useNavigate();
@@ -41,23 +42,7 @@ const SelfHosted: React.FC = () => {
   ];
 
   return (
-    <div className="min-h-screen flex flex-col bg-gradient-to-br from-gray-50 to-white">
-      {/* Header */}
-      <header className="px-6 py-4">
-        <div className="max-w-6xl mx-auto flex items-center">
-          <button
-            onClick={() => navigate('/setup-type')}
-            className="flex items-center space-x-2 text-gray-600 hover:text-gray-900 transition-colors"
-          >
-            <ArrowLeft className="w-5 h-5" />
-            <span>Back</span>
-          </button>
-        </div>
-      </header>
-
-      {/* Main Content */}
-      <main className="flex-1 px-6 py-8">
-        <div className="max-w-6xl mx-auto">
+    <PageLayout backPath="/setup-type">
           <div className="text-center mb-12">
             <h1 className="text-4xl lg:text-5xl font-bold text-gray-900 mb-4">
               Self-Hosted Platforms
@@ -126,9 +111,7 @@ const SelfHosted: React.FC = () => {
               </div>
             </div>
           </div>
-        </div>
-      </main>
-    </div>
+    </PageLayout>
   );
 };
 
