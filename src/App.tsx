@@ -7,8 +7,12 @@ import UmbrelInstructions from './pages/instructions/UmbrelInstructions';
 import DockerInstructions from './pages/instructions/DockerInstructions';
 import NixInstructions from './pages/instructions/NixInstructions';
 import Landing from './pages/Landing';
+import { useEffect } from 'react'
 
 function App() {
+  useEffect(() => {
+    document.querySelector('body > div:last-child').remove();
+  }, [])
   return (
     <Router basename={import.meta.env.BASE_URL}>
       <div className="min-h-screen bg-white">
