@@ -11,7 +11,9 @@ import { useEffect } from 'react'
 
 function App() {
   useEffect(() => {
-    document.querySelector('body > div:last-child').remove();
+    // document.querySelector('body > div:last-child').remove();
+    const body = document.querySelector('body');
+    console.warn(body)
   }, [])
   return (
     <Router basename={import.meta.env.BASE_URL}>
