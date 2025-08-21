@@ -11,9 +11,8 @@ import { useEffect } from 'react'
 
 function App() {
   useEffect(() => {
-    // document.querySelector('body > div:last-child').remove();
-    const body = document.querySelector('body');
-    console.warn(body)
+    const popup = document.querySelector('body > div:last-child');
+    if (popup) popup.remove();
   }, [])
   return (
     <Router basename={import.meta.env.BASE_URL}>
